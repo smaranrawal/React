@@ -28,9 +28,8 @@ export default function TextForm(props) {
 
   const handleCopy =()=>{
     
-   var text = document.getElementById("exampleFormControlTextarea1");
-   text.select();
-    navigator.clipboard.writeText(text.value);  
+   
+    navigator.clipboard.writeText(text);  
     props.showAlert("Copied to clipboard!","sucesss");
   }
 
@@ -58,7 +57,7 @@ export default function TextForm(props) {
     </div>
     <div className="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>
     <h1>Your text summary</h1>
-    <p>{text.split(" ").filter((element)=>{return element.length!==0}).length}words and {text.length} characters</p>
+    <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length}words and {text.length} characters</p>
     <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} minutes read</p>
     <h1>Preview</h1>
     <p>{text}</p>

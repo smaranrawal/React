@@ -25,8 +25,10 @@ export default function About(props) {
               data-bs-target="#collapseOne"
               aria-expanded="true"
               aria-controls="collapseOne"
+             
             >
               Accordion Item #1
+            
             </button>
           </h2>
           <div
